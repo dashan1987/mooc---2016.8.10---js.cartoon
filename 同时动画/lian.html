@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>moves</title>
+	<style>
+        *{
+        	margin: 0;
+        	padding: 0;
+        }
+        ul,li{
+        	list-style: none;
+        }
+        li{
+        	width: 300px;
+        	height: 100px;
+        	margin: 20px;
+        	background-color: yellow;
+        	fliter: alpha(opacity:30);
+        	opacity: 0.3;        	
+        }
+	</style>
+
+	<script>
+	   window.onload=function(){
+	   	   var im=document.getElementsByTagName('li');
+
+	   	   for(var i=0;i<im.length;i++ ){
+	   	   	  im[i].timer=null;
+	   	   	  im[i].alpha=30;
+	   	   	  im[i].onmouseover=function(){
+	   	   	  	move(this,{'width':600,'opacity':100});
+	   	   	  }
+	   	   	  im[i].onmouseout=function(){
+	   	   	  	move(this,{'width':200,'opacity':30});
+	   	   	  }
+	   	   }
+	   }
+	   // // var timer=null;
+	   // function moves(ogi,itarget){
+	   // 	   var im=document.getElementsByTagName('li');
+    //        clearInterval(ogi.timer);
+    //        ogi.timer=setInterval(function(){
+    //        	   var speed=(itarget-ogi.offsetWidth)/20;
+    //        	   speed=speed>0?Math.ceil(speed):Math.floor(speed);
+    //        	   if(ogi.offsetWidth==itarget){
+    //        	   	  clearInterval(ogi.timer);
+    //        	   }
+    //        	   else{
+    //        	   	ogi.style.width= ogi.offsetWidth+speed+'px';
+    //        	   }
+    //        }, 30)
+	   // }
+ 
+	</script>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script src="move.js"></script>
+</body>
+</html>
