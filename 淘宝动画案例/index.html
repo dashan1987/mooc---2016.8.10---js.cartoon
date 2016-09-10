@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淘宝</title>
+	<style>
+	  /* reset */
+	   *{
+	   	padding: 0;
+	   	margin: 0;
+	   }
+	   ul,li{
+	   	list-style: none;
+	   }
+	   body{
+	   	font-size: 18px;
+	   	text-align: center;
+	   	font-family:'黑体';
+	   }
+	   /* main */
+	   .ul1{
+	   	width: 380px;
+	   	margin: 10px auto;
+	    }
+	   .ul1 li{
+	   	border:2px solid #dadada;
+	   	margin: 10px;
+	   	width: 40px;
+	   	padding: 10px;
+	   	float: left;
+	   }
+	   .ul1 p{
+	   	color:#c9c8c8;
+	   	text-decoration:none;
+	   	margin-top:53px;
+	   }
+	   .ul1 h3{
+	   	margin: 10px auto;
+	   }
+	   .ul1 a{
+	   	text-decoration:none;
+	   	overflow:hidden
+	   }
+       .ul1 img{
+       	border:0;
+       	width:28px;
+       	height:28px;
+       	top:62px;
+       	left: -15px;
+        position: absolute;
+       }
+       .ul1 li i{
+       	top:-45px;
+        position: relative;
+       }
+	   /* mouse */
+	   .ul1 li:hover p{
+	   	color:#ff4400;
+	   	cursor: pointer;
+	   }
+
+	</style>
+</head>
+<body>
+  <div>
+    <h3>便民服务</h3>
+  	<ul class="ul1">
+  		<li>
+  		    <a href="#">
+  			<i><img src="images/game.png" alt="" class="img1"></i>
+  			<p>游戏</p>
+  			</a>
+  		</li>
+  		<li>
+  		    <a href="#">
+  			<i><img src="images/insurance.png" alt="" class="img1"></i>
+  			<p>保险</p>
+  			</a>
+  		</li>
+  		<li>
+  		    <a href="#">
+  			<i><img src="images/lottery.png" alt="" class="img1"></i>
+  			<p>彩票</p>
+  			</a>
+  		</li>
+  		<li>
+  		    <a href="#">
+  			<i><img src="images/money.png" alt="" class="img1"></i>
+  			<p>理财</p>
+  			</a>
+  		</li>
+  		<li>
+  		    <a href="#">
+  			<i><img src="images/movie.png" alt="" class="img2"></i>
+  			<p>电影</p>
+  			</a>
+  		</li>
+  		<li>
+  		    <a href="#">
+  			<i><img src="images/sell.png" alt="" class="img2"></i>
+  			<p>外卖</p>
+  			</a>
+  		</li>
+  		<li>
+  		    <a href="#">
+  			<i><img src="images/telephone.png" alt="" class="img2"></i>
+  			<p>话费</p>
+  			</a>
+  		</li>
+  		<li>
+  		    <a href="#">
+  			<i><img src="images/travel.png" alt="" class="img2"></i>
+  			<p>旅行</p>
+  			</a>
+  		</li>
+  	</ul>
+  </div>
+  <script src="move.js"></script>
+  <script>
+     window.onload=function(){
+     	var li=document.getElementsByTagName('li');
+     	for (var i = 0; i < li.length; i++) {
+     		li[i].timer=null;
+     		li[i].onmouseover=function(){
+     			var _this=this.getElementsByTagName('i')[0];
+     			move(_this,{top:-85,opacity:0},function(){
+                    _this.style.top=-37+'px';
+	               move(_this,{top:-45,opacity:100});
+     			})
+     		}
+     	}
+     }
+  </script>
+	
+</body>
+</html>
