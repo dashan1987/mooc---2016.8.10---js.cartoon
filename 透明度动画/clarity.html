@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>speed</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	div{
+		width: 220px;
+		height: 100px;
+		margin: 20px;
+		background-color: #567;
+		filter:alpha(opacity:30) ;  
+		opacity: 0.3;  
+
+	}
+	</style>
+
+	<script>
+	window.onload=function(){
+		var im=document.getElementsByTagName('div');
+
+		for (var i = 0; i < im.length; i++) {
+		    im[i].alpha=30;
+		    im[i].timer=null;
+		    im[i].onmouseover=function(){
+		    	move(this,100);
+		    }	
+		    im[i].onmouseout=function(){
+		    	move(this,30);
+		    }
+		}
+		
+	}
+
+	
+    function move(obi,itarget){
+    	var im=document.getElementsByTagName('div');
+        clearInterval(obi.timer);
+        obi.timer=setInterval(function(){
+        	var speed=(itarget-obi.alpha)/10;
+        	speed=speed>0?Math.ceil(speed):Math.floor(speed);
+          // if(obi.alpha<itarget){
+          // 	speed=10;
+          // }
+          // else{
+          // 	speed=-10;
+          // }
+         if(obi.alpha==itarget){
+         	clearInterval(obi.timer);
+         }
+         else{
+         	obi.alpha+=speed;
+         	obi.style.filter='alpha(opicity:'+obi.alpha+')';
+         	obi.style.opacity=obi.alpha/100;
+         }
+        }, 30)
+    }
+	</script>
+</head>
+<body>
+
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+
+</body>
+</html>
