@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>speed</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#wrap{
+		position: relative;
+	}
+	#main{
+		position: absolute;
+		left: -200px;
+		width: 220px;
+		height: 50px;
+		background-color: #567;       
+	}
+	</style>
+
+	<script>
+	window.onload=function(){
+		var i =document.getElementById('main');
+		i.onmouseover=function(){
+			move(0);
+		}
+		i.onmouseout =function(){
+			move(-200);
+		}
+	}
+	var timer =null;
+	function move(itarget){
+		clearInterval(timer);
+		var i=document.getElementById('main');
+		var speed=0;
+		timer=setInterval(function(){
+			if(i.offsetLeft<itarget){
+				speed=10;
+				
+			}
+			else{
+				speed=-10;
+			}
+			if (i.offsetLeft==itarget){
+				clearInterval(timer);
+			}
+			else{
+				i.style.left=i.offsetLeft+speed+'px';
+			}
+		}, 30)
+	}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="main"></div>
+	</div>
+</body>
+</html>
